@@ -1,0 +1,92 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[a4paper]{geometry}
+
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{libertine}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+
+\title{Нильпотентные и разрешимые алгебры Ли}
+\author{Виногродский Серафим}
+\date{\today}
+
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{corollary}{Следствие}[theorem]
+\newtheorem{lemma}[theorem]{Лемма}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}[section]
+
+\begin{document}
+\maketitle
+\tableofcontents
+\thispagestyle{empty}
+\pagebreak
+
+\section{Введение}%
+\label{sec:introduction}
+
+\subsection{Основные понятия}%
+\label{sec:definitions}
+
+Рассмотрим для начала определение алгебры Ли, основные связанные с ней понятия.
+
+\begin{definition}
+    \label{def:lie_algebra}
+    Векторное пространство \( L \) над полем \( \mathrm F \), дополненное операцией \( L \times L \to L \), которая обозначается \( (x ,y) \mapsto [xy] \) и называется скобкой Ли или коммутатором \( x \) и \( y \), называется алгеброй Ли над полем \( \mathrm F \), если выполнен следующий ряд аксиом:
+    \begin{itemize}
+        \item[(\textit{L}1)] Скобка Ли билинейна.
+        \item[(\textit{L}2)] \( [x x] = 0 \) для любого \( x \in L \).
+        \item[(\textit{L}3)] Для скобки Ли выполнено тождество Якоби, т.е.
+            \[
+                [x[yz]] + [y[zx]] + [z[xy]] = 0 \quad (x, y, z \in L).
+            \]
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}%
+    \label{theorem:commutator_anticommutativity}
+    Операция коммутировая антикоммутативна, т.е.
+    \[
+        [x y] = -[y x] \quad \forall x, y \in L.
+    \]
+\end{theorem}
+\begin{proof}
+    Рассмотрим два произвольных \( x, y \in L \). Тогда по аксиоме (\textit{L}2) имеем \( [x + y, x + y] = 0 \) и одновременно по аксиоме (\textit{L}1)
+    \begin{align*}
+        [x + y, x + y]
+        &= [x x] + [x y] + [y x] + [y y] \\
+        &= [x y] + [y x].
+    \end{align*}
+
+    Получаем, что \( [x y] + [y x] = 0 \), откуда и следует, что \( [x y] = -[y x] \).
+\end{proof}
+
+\begin{definition}
+    \label{def:isomorphism}
+    Изоморфизмом двух алгебр Ли \( L \), \( L' \) называется такой изоморфизм векторных пространств \( \phi : L \to L' \), что
+    \[
+        \phi([x y]) = [\phi(x) \phi(y)] \quad \forall x, y \in L.
+    \]
+\end{definition}
+
+\begin{definition}
+    \label{def:isomorphousness}
+    Две алгебры Ли \( L \), \( L' \) называются изоморфными, если существует изоморфизм алгебр Ли \( \phi : L \to L' \).
+\end{definition}
+
+\begin{definition}
+    Подпространство \( K \) алгебры Ли \( L \) называется подалгеброй алгебры \( L \), если \( \forall x, y \in K \quad [x y] \in K \).
+\end{definition}
+
+Нетрудно показать, что \( K \) вместе с наследованными операциями удовлетворяет всем аксиомам из определения алгебры Ли.
+
+\end{document}
+
+% vim: spell spelllang=ru_yo
