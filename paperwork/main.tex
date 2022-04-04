@@ -196,6 +196,58 @@
 \]
 а значит \({ [x', y'] + I = [x, y] + I }\).
 
+\subsection{Гомоморфизмы}
+\begin{definition}
+    Пусть \({ L, L' }\) --- две линейные алгебры над полем \({ F }\). Линейное отображение \({ \phi : L \to L' }\) называется \textit{гомоморфизмом} алгебр Ли, если
+    \[
+        \phi([x, y]) = [\phi(x), \phi(y)] \quad \forall x, y \in L.
+    \]
+\end{definition}
+
+\begin{definition}
+    Гомоморфизм алгебр Ли \({ \phi : L \to L' }\) называется
+    \begin{itemize}
+        \item \textit{мономорфизмом}, если \({ \ker \phi = \left\{ 0 \right\} }\);
+        \item \textit{эпиморфизмом}, если \({ \operatorname{im} \phi = L' }\).
+    \end{itemize}
+\end{definition}
+
+Очевидно, что \({ \phi }\) является изоморфизмом тогда и только тогда, когда \({ \phi }\) одновременно и моно- и эпиморфизм. Легко так же проверяется, что \({ \ker \phi }\) --- идеал в \({ L }\), а \({ \operatorname{im} \phi }\) --- подалгебра алгебры \({ L }\).
+
+Как и в других алгебраических теориях, для алгебр Ли существует естественное взаимно однозначное соответствие между гомоморфизмами и идеалами: гомоморфизму \({ \phi }\) ставится в соответствие идеал \({ \ker \phi }\), а идеалу \({ I }\) --- \textit{каноническое отображение} \({ \pi : L \to L / I }\), заданное правилом \({ x \mapsto x + I }\).
+
+Для изоморфизмомов алгебр Ли выполняются и классические теоремы об изоморфизме:
+
+\begin{proposition}
+    \label{prop:1st_isomorphism_theorem}
+    Если \({ \phi : L \to L }\) --- гомоморфизм алгебр Ли, то \( L / \ker \phi \simeq \operatorname{im} \phi. \)
+\end{proposition}
+\begin{proof}
+    Легко показать, что отображение \({ (x + \ker \phi) \mapsto \phi(x) }\) есть изоморфизм алгебр \({ L / \ker \phi }\) и \({ \operatorname{im} \phi }\).
+\end{proof}
+
+\begin{proposition}
+    Если \({ I }\) и \({ J }\) --- два идеала в алгебре \({ L }\) и \({ I \subset J }\), то \({ J / I }\) --- идеал в \({ L / I }\), а алгебра \({ (L / I) / (J / I) }\) изоморфна \({ L / J }\).
+\end{proposition}
+\begin{proof}
+    Пусть \({ x + I \in J / I }\) и \({ y + I \in L / I }\). Тогда имеем
+    \[
+        [x + I, y + I] = [x, y] + I \in J / I,
+    \]
+    а значит \({ J / I }\) --- идеал в \({ L / I }\). Рассмотрим теперь гомоморфизм \({ \phi : x + I \mapsto x + J }\), действующий из \({ L / I }\) в \({ L / J }\). Отображение \({ \phi }\) задано корректно, поскольку если \({ x' + I = x + I }\), то \({ x' = x + i }\) (где \({ i \in I \subset J }\)), а значит
+    \[
+        \phi(x' + I) = (x + i) + J = x + J.
+    \]
+    Очевидно, что \({ \ker \phi = J / I }\), \({ \operatorname{im} \phi = L / I }\), но тогда по утверждению (\ref{prop:1st_isomorphism_theorem}) имеем \( (L / I) / (J / I) \simeq L / J \).
+\end{proof}
+
+\begin{proposition}
+    Если \({ I }\) и \({ J }\) --- два идеала в алгебре \({ L }\), то \({ (I + J) / J \simeq I / (I \cap J) }\).
+\end{proposition}
+\begin{proof}
+    Рассмотрим гомоморфизм \({ \phi : i \mapsto i + J }\), действующий из \({ I }\) в \({ (I + J) / J }\). Очевидно, что \({ \ker \phi = I \cap J }\), \({ \operatorname{im} \phi = (I + J) / J }\), но тогда по утверждению (\ref{prop:1st_isomorphism_theorem}) имеем \({ I / (I \cap J) \simeq (I + J) / J }\).
+\end{proof}
+
 \section{Разрешимые и нильпотентные алгебры Ли}
 \subsection{Разрешимость}
 
