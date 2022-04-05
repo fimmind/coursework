@@ -243,6 +243,7 @@
 \end{proof}
 
 \begin{proposition}
+    \label{prop:3rd_isomorphism_theorem}
     Если \({ I }\) и \({ J }\) --- два идеала в алгебре \({ L }\), то \({ (I + J) / J \simeq I / (I \cap J) }\).
 \end{proposition}
 \begin{proof}
@@ -277,31 +278,30 @@
 Приведём теперь несколько простых свойств разрешимых алгебр Ли.
 
 \begin{proposition}
-    Если алгебра Ли \({ L }\) разрешима, то разрешимы и все её подалгебры.
+    \label{prop:subalgebras_and_homorphisms_solvability}
+    Если алгебра Ли \({ L }\) разрешима, то разрешимы все её подалгебры и гомоморфные образы.
 \end{proposition}
 \begin{proof}
-    Если \({ K }\) --- подалгебра в \({ L }\), то из определения (\ref{def:subalgebras}) имеем \({ K^{(i)} \subset L^{(i)} }\). Тогда если для некоторого \({ k }\) имеем \({ L^{(k)} = \left\{ 0 \right\} }\), то и \({ K^{(k)} = \left\{ 0 \right\} }\).
+    Если \({ K }\) --- подалгебра в \({ L }\), то из определения~(\ref{def:subalgebras}) имеем \({ K^{(i)} \subset L^{(i)} }\). Тогда если для некоторого \({ k }\) выполнено \({ L^{(k)} = \left\{ 0 \right\} }\), то и \({ K^{(k)} = \left\{ 0 \right\} }\). Аналогично, если \({ \phi : L \to  M }\) --- эпиморфизм, то простая индукция по \({ i }\) показывает, что \({ \phi(L^{(i)}) = M^{(i)}. }\)
 \end{proof}
 
 \begin{proposition}
-    Если алгебра Ли \({ L }\) разрешима, то разрешимы и все её гомоморфные образы.
-\end{proposition}
-\begin{proof}
-    TODO (надо сначала ввести определение гомоморфизма)
-\end{proof}
-
-\begin{proposition}
+    \label{prop:L/I_solvability}
     Если \({ I }\) --- разрешимый идеал в алгебре Ли \({ L }\) и алгебра \({ L / I }\) разрешима, то и сама \({ L }\) тоже разрешима.
 \end{proposition}
 \begin{proof}
-    TODO (надо сначала ввести определение алгебры \({ L / I }\))
+    Пусть \({ (L / I)^{(n)} = \left\{ 0 \right\} }\), \({ \pi : L \to L / I }\) --- канонический гомоморфизм. Из доказательства утверждения~(\ref{prop:subalgebras_and_homorphisms_solvability}) имеем \({ \pi(L^{(n)}) = \left\{ 0 \right\} }\), т.е.
+    \[
+        L^{(n)} \subset I = \ker \pi,
+    \]
+    а значит \({ L^{(n)} }\) --- подалгебра в разрешимом идеале \({ I }\), откуда по утверждению (\ref{prop:subalgebras_and_homorphisms_solvability}) имеем разрешимость \({ L^{(n)} }\), но тогда, очевидно, разрешима и \({ L }\).
 \end{proof}
 
 \begin{proposition}
     Если \({ I }\) и \({ J }\) --- разрешимые идеалы в алгебре Ли \({ L }\), то идеал \({ I + J }\) тоже разрешим.
 \end{proposition}
 \begin{proof}
-    TODO (тоже нужны гомоморфизмы)
+    Алгебра \({ I / (I \cap J) }\) разрешима как гомоморфный образ идеала \({ I }\) при отображении \({ \phi : x \mapsto x + I \cap J }\), а значит разрешима и изоморфная ей по утверждению (\ref{prop:3rd_isomorphism_theorem}) алгебра \({ (I + J) / J }\). Тогда по утверждению (\ref{prop:L/I_solvability}) для пары \({ I + J }\), \({ J }\) имеем разрешимость \({ I + J }\).
 \end{proof}
 
 \end{document}
